@@ -33,6 +33,10 @@ private slots:
 
     void on_pbReset_clicked();
 
+    void on_pbTea_clicked();
+
+    void on_pbMilk_clicked();
+
 private:
     Ui::Widget *ui;
 };
