@@ -9,6 +9,7 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    changeMoney(0);
 }
 
 Widget::~Widget()
@@ -18,24 +19,10 @@ Widget::~Widget()
 void Widget::changeMoney(int n){
     money += n;
     ui->lcdNumber->display(money);
-    if (100 <= money){
-        ui->pbCoffee->setEnabled(true);
-    }
-    else{
-        ui->pbCoffee->setEnabled(false);
-    }
-    if (150 <= money){
-        ui->pbTea->setEnabled(true);
-    }
-    else{
-        ui->pbTea->setEnabled(false);
-    }
-    if (200 <= money){
-        ui->pbMilk->setEnabled(true);
-    }
-    else{
-        ui->pbMilk->setEnabled(false);
-    }
+
+    ui->pbCoffee->setEnabled(100 <= money);
+    ui->pbTea->setEnabled(150 <= money);
+    ui->pbMilk->setEnabled(200 <= money);
 
 }
 
