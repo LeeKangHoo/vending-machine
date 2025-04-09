@@ -82,6 +82,7 @@ void Widget::on_pbReset_clicked()
 {
     QString msg = QString("500won:%1\n100won:%2\n50won:%3\n10won:%4").arg(money/500).arg((money%500)/100).arg((money%100)/50).arg((money%50)/10);
     QMessageBox::information(nullptr,"Reset",msg);
+    changeMoney(-money);
 }
 
 
